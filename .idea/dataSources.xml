@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="faketerest@localhost" uuid="1dfbaa8b-94c2-4ad6-8c87-0a5ac61b6c47">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/faketerest</jdbc-url>
+      <vm-options>-Duser.timezone=UTC+2:00</vm-options>
+    </data-source>
+  </component>
+</project>

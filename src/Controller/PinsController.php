@@ -81,4 +81,16 @@ class PinsController extends AbstractController
             'pin' => $pin
         ]);
     }
+
+    /**
+     * @Route("/pins/{id<[0-9]+>}/delete", name="app_pins_delete", methods={"DELETE"})
+     */
+    public function delete(Pin $pin): Response
+    {
+        $this->manager->remove($pin);
+        $this->manager->flush();
+
+        return $this->redirectToRoute('app_home');
+
+    }
 }

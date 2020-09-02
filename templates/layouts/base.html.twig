@@ -4,8 +4,27 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+
+        <style>
+            .alert {
+                padding: 10px;
+                color: white;
+                text-align: center;
+            }
+
+            .alert-success {
+                background-color: green;
+            }
+            .alert-info {
+                background-color: coral;
+            }
+            .alert-error {
+                background-color: indianred;
+            }
+        </style>
     </head>
     <body>
+        {% include('layouts/partials/_flash_messages.html.twig') %}
     <nav>
         <ul>
             <li><a href="{{ path('app_home') }}">Accueil</a></li>

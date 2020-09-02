@@ -42,10 +42,11 @@ class Pin
     private $description;
 
     /**
-    *
-    * @Vich\UploadableField(mapping="pin_image", fileNameProperty="imageName")
-    *
-    * @var File|null
+     *
+     * @Vich\UploadableField(mapping="pin_image", fileNameProperty="imageName")
+     * @Assert\Image(maxSize="8M")
+     *
+     * @var File|null
      */
     private $imageFile;
 

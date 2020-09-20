@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Pin;
+use App\Entity\User;
 use App\Form\PinType;
 use App\Repository\PinRepository;
 use App\Repository\UserRepository;
@@ -50,7 +51,8 @@ class PinsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $user = $userRepository->findOneBy(['id' => '2']);
+            /** @var User $user */
+            $user = $this->getUser();
             $pin->setUser($user);
             $this->manager->persist($pin);
             $this->manager->flush();

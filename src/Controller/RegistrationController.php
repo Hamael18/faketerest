@@ -30,12 +30,6 @@ class RegistrationController extends AbstractController
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator): Response
     {
-        if($this->getUser()){
-            $this->addFlash('error', 'Vous êtes déjà connecté.e !');
-
-            return $this->redirectToRoute('app_home');
-        }
-
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
@@ -82,7 +76,6 @@ class RegistrationController extends AbstractController
     public function verifyUserEmail(Request $request): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-
 
         // validate email confirmation link, sets User::isVerified=true and persists
         try {
